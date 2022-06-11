@@ -16,6 +16,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - )"
 
+#powerlevel10kを起動
+source ~/.p10k.zsh
 
 # alias
 alias lsa="ls -la"
