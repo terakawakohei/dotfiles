@@ -21,9 +21,10 @@ ln -sf ~/dotfiles/.vim ~/.vim
 # change shell
 chsh -s $(which zsh)
 
+#powerlevel10kの設定ファイルを$HOMEにコピー
+cp ~/dotfiles/zsh/.p10k.zsh ~/
+
 source ~/dotfiles/.zshrc
 source ~/dotfiles/.zpreztorc
 
-#powerlevel10kの設定ファイルを$HOMEにコピー
-cp ~/dotfiles/zsh/.p10k.zsh ~/
-source ~/.p10k.zsh
+
