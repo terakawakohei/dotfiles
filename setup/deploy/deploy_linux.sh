@@ -10,7 +10,7 @@ echo ""
 #zshの取得
 sudo apt install zsh
 #bash→zshの変更を行う
-chsh -s /bin/bash
+chsh -s /bin/zsh
 # ------------------------------------------------------------------------
 
 # Create backup directory
