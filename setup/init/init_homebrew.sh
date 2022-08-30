@@ -11,7 +11,7 @@ then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # deploy完了までの間にhomebrewのpathを通すため、一時的に.zprofileにpathを書き込む(deploy phaseで上書きされる)
     echo "Write homebrew path to .zprofile"
-    echo 'eval "$(/home/linuxbrew/bin/brew shellenv)"' >> $HOME/.zprofile
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.zprofile
     source $HOME/.zprofile
     echo ""
 else
