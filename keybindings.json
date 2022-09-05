@@ -1,0 +1,103 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+  // Toggle terminal focus. If there is not a runnning terminal, start new one.
+  {
+    "key": "ctrl+enter",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  // Toggle maximize/minimize terminal area.
+  {
+    "key": "ctrl+space",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+    //サイドバー表示(toggle)
+    {
+        "key": "shift+Tab",
+        "command":"workbench.action.toggleSidebarVisibility",
+        "when": "!explorerViewletVisible && !searchViewletVisible && !inDebugMode && vim.mode != 'SearchInProgressMode' && vim.mode != 'Insert'"
+    },
+    {
+        "key": "shift+Tab",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "explorerViewletVisible && !searchViewletVisible && !inDebugMode && vim.mode != 'SearchInProgressMode' && vim.mode != 'Insert'"
+    },
+/* -------------------------------- explorer -------------------------------- */
+    //explorer表示
+    {
+        "key": "ctrl+Tab",
+        "command": "workbench.view.explorer"
+    },
+    //エクスプローラー間移動
+    {
+        "key": "j",
+        "command": "list.focusDown",
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+    },
+    {
+        "key": "k",
+        "command": "list.focusUp",
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+    },
+
+    //新規ファイル作成
+    {
+        "key": "n",
+        "command": "explorer.newFile",
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+    },
+    //新規フォルダ作成
+    {
+        "key": "f",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+    },
+    //エクスプローラーでフォルダを開く
+    {
+        "key": "e",
+        "command": "revealFileInOS",
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+    },
+    //リネーム
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+    },
+    //削除
+    {
+        "key": "d",
+        "command": "deleteFile",
+        "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+    },
+/* ----------------------------- grep検索(sidebar) ---------------------------- */
+    {
+        "key": "shift+ctrl+f",
+        "command": "workbench.action.findInFiles",
+        "when": "!searchInputBoxFocus"
+    },
+    {
+      "key": "ctrl+0",
+      "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+      "when": "!activeEditorGroupEmpty"
+    },
+    
+/* ----------------------------- VSCode neovim用 ---------------------------- */
+    {
+        "command": "vscode-neovim.compositeEscape1",
+        "key": "j",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "args": "j"
+    },
+    {
+      "key": "tab space",
+      "command": "workbench.action.terminal.toggleTerminal",
+      "when": "terminal.active"
+    },
+    
+  
+]
