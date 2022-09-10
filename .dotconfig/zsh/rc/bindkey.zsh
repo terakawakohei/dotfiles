@@ -1,21 +1,4 @@
 # ------------------------------------------------------------------------
-# Reset 
-# ------------------------------------------------------------------------
-
-# Reset to default keybind
-bindkey -d
-
-# ------------------------------------------------------------------------
-# macOS basis
-# ------------------------------------------------------------------------
-
-# Enable Emacs keybind
-bindkey -e
-
-# Enable fn + delete key
-bindkey "^[[3~" delete-char
-
-# ------------------------------------------------------------------------
 # History
 # ------------------------------------------------------------------------
 
@@ -94,7 +77,7 @@ bindkey '^G^F' peco-ghq-vscode
 # ------------------------------------------------------------------------
 
 function open-my-repos() {
-  local selected_repo=$(curl -s https://api.github.com/users/jimon-s/repos | jq -r ".[].full_name" | peco )
+  local selected_repo=$(curl -s https://api.github.com/users/terakawakohei/repos | jq -r ".[].full_name" | peco )
   if [ -n "$selected_repo" ]; then
     BUFFER="open https://github.com/${selected_repo}"
     echo $BUFFER
@@ -103,4 +86,4 @@ function open-my-repos() {
   zle clear-screen
 }
 zle -N open-my-repos
-bindkey '^J^I' open-my-repos
+bindkey '^O^J' open-my-repos
